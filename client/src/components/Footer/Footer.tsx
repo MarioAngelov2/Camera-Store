@@ -1,6 +1,6 @@
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
-export function App() {
+export function Footer() {
     return (
         <footer id="contact" className="max-container mx-auto">
             <div className="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">

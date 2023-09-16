@@ -7,7 +7,7 @@ import { AiOutlineWifi } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { BiRightArrowAlt } from "react-icons/bi";
 
-export function App() {
+export function Hero() {
     return (
         <section
             id="home"
