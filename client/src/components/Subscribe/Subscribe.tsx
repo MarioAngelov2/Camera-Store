@@ -1,4 +1,4 @@
-export function Subscribe() {
+export default function Subscribe() {
     return (
         <section id="contact-us" className="max-container mx-auto">
             <div className="flex max-lg:flex-col items-center justify-between">

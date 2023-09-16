@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-export function Navbar() {
+export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (

@@ -1,6 +1,6 @@
 import sony from "../../assets/mirrorless/1.png";
 
-export function CameraInfo() {
+export default function CameraInfo() {
     return (
         <section
             id="cameraInfo"
