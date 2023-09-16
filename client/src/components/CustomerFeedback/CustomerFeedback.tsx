@@ -1,7 +1,7 @@
 import person1 from "../../assets/people/person1.jpg";
 import person2 from "../../assets/people/person2.jpg";
 
-export function App() {
+export function CustomerFeedback() {
     return (
         <section className="max-container mx-auto flex flex-col items-center justify-center">
             <h2 className="text-4xl font-bold font-palanquin mb-6">
