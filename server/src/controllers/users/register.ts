@@ -1,9 +1,19 @@
 import { NextFunction, Request, Response } from "express";
-import { UserModel, IUser } from "models/user";
+import { UserModel, IUser } from "../../models/user";
 import bcrypt from "bcrypt";
 import createHttpError from "http-errors";
 
-const createUser = async (req: Request, res: Response, next: NextFunction) => {
+interface CreateUserRequestBody {
+    name: string;
+    email: string;
+    password: string;
+}
+
+const createUser = async (
+    req: Request<{}, {}, CreateUserRequestBody>,
+    res: Response,
+    next: NextFunction
+) => {
     try {
         const { name, email, password } = req.body;
 
@@ -13,7 +23,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
 
         const existingUser = await UserModel.findOne({ email: email }).exec();
 
-        if (!existingUser) {
+        if (existingUser) {
             throw new createHttpError.Conflict("User already exists");
         }
 
@@ -26,7 +36,7 @@ const createUser = async (req: Request, res: Response, next: NextFunction) => {
         });
 
         await newUser.save();
-        res.status(201).json({ message: "User created successfully", newUser });
+        res.status(201).json(newUser);
     } catch (error) {
         console.log(error);
     }
