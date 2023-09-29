@@ -1,9 +1,8 @@
-require('dotenv').config();
-import express from 'express';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
-import mongoose from 'mongoose';
-
+require("dotenv").config();
+import express from "express";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import mongoose, { mongo } from "mongoose";
 
 const app = express();
 
@@ -11,4 +10,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-app.listen(3001, () => console.log('Server running on port 3001'));
+mongoose
+    .connect(process.env.MONGO_CONNECTION_STRING)
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((err) => console.log("Error connecting to MongoDB", err));
+
+app.listen(3001, () => console.log("Server running on port 3001"));
