@@ -18,6 +18,9 @@ function App() {
                 <Route path="/" element={<GlobalRoute />} />
                 <Route path="/catalog" element={<Catalog />} />
             </Routes>
+            <section className="padding bg-black">
+                <Footer />
+            </section>
         </main>
     );
 
@@ -44,9 +47,6 @@ function App() {
                     </section>
                     <section className="padding padding-y padding-x">
                         <Subscribe />
-                    </section>
-                    <section className="padding bg-black">
-                        <Footer />
                     </section>
                 </>
             );
