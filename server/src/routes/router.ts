@@ -2,6 +2,7 @@ import { Router } from "express";
 import register from '../controllers/users/register'
 import loginUser from "../controllers/users/login";
 import createListing from "../controllers/admin/createListing";
+import deleteListing from "../controllers/admin/deleteListing";
 import auth from '../middleware/auth'
 import adminAuth from "../middleware/adminAuth";
 
@@ -12,5 +13,6 @@ router.get('/login', loginUser);
 
 router.post('/admin/create-listing',  createListing);
 router.put('/admin/update-listing/:id', createListing);
+router.delete('/admin/delete-listing/:id', deleteListing)
 
 export default router;
