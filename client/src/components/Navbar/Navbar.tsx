@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,9 +10,9 @@ export default function Navbar() {
         <section className="fixed top-0 bg-white right-0 padding-x py-4 z-10 w-full">
             <nav className="max-container mx-auto flex justify-between items-center">
                 <h1 className="font-black text-3xl">
-                    <a href="#home">
+                    <Link to='/'>
                         PHOTO<span className="text-blue">LAND</span>
-                    </a>
+                    </Link>
                 </h1>
                 <div className="relative max-lg:hidden">
                     <input
@@ -26,16 +27,16 @@ export default function Navbar() {
                 </div>
                 <ul className="hidden lg:flex items-center gap-8 font-montserrat font-semibold tracking-wide">
                     <li>
-                        <a href="#products">Catalog</a>
+                        <Link to='/catalog'>Catalog</Link>
                     </li>
                     <li>
-                        <a href="#about-us">About</a>
+                        <Link to='/about'>About</Link>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <Link to='/contact'>Contact</Link>
                     </li>
                     <li>
-                        <a href="#services">Services</a>
+                        <Link to='/services'>Services</Link>
                     </li>
                 </ul>
                 {isOpen ? (
