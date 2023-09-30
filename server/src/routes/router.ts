@@ -10,6 +10,7 @@ const router = Router();
 router.post('/register', register);
 router.get('/login', loginUser);
 
-router.post('/admin/create-listing', adminAuth, createListing);
+router.post('/admin/create-listing',  createListing);
+router.put('/admin/update-listing/:id', createListing);
 
 export default router;
