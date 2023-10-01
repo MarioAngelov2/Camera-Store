@@ -61,6 +61,21 @@
         @apply transition duration-300 ease-in-out
         bg-gray-400;
     }
+
+    .input-primary {
+        @apply
+        w-48 md:w-64 h-12 border rounded-xl px-2 
+    }
+
+    .link-admin-panel {
+        @apply
+        flex items-center gap-2 text-gray-300 font-palanquin transition duration-200 ease-in-out cursor-pointer
+    }
+
+    .link-admin-panel:hover {
+        @apply
+        text-white transition duration-300 ease-in-out
+    }
 }
 
 @layer utilities {
