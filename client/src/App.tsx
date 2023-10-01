@@ -8,19 +8,27 @@ import CustomerFeedback from "./components/CustomerFeedback/CustomerFeedback";
 import Subscribe from "./components/Subscribe/Subscribe";
 import Footer from "./components/Footer/Footer";
 import Catalog from "./components/Catalog/Catalog";
-// import Layout from "./Layout";
+import AdminLogin from "./components/Admin/AdminLogin";
+import AdminDashboard from "./components/Admin/AdminDashboard";
 
 function App() {
+    const isAdminRoute = window.location.pathname.startsWith("/admin");
+
     return (
         <main className="relative">
-            <Navbar />
+            {isAdminRoute ? null : <Navbar />}
             <Routes>
+                <Route path="/admin" element={<AdminLogin />} />
+                <Route path="/admin/dashboard" element={<AdminDashboard />} />
                 <Route path="/" element={<GlobalRoute />} />
                 <Route path="/catalog" element={<Catalog />} />
             </Routes>
-            <section className="padding bg-black">
-                <Footer />
-            </section>
+
+            {isAdminRoute ? null : (
+                <section className="padding bg-black">
+                    <Footer />{" "}
+                </section>
+            )}
         </main>
     );
 
