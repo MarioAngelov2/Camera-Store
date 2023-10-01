@@ -1,4 +1,3 @@
-import React from "react";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { HiOutlineArchiveBox } from "react-icons/hi2";
 import { BsListTask } from "react-icons/bs";
