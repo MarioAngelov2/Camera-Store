@@ -6,7 +6,7 @@ import Filter from "./Filter";
 const Catalog = () => {
     return (
         <section className="padding">
-            <div className=" mt-20 max-container mx-auto  flex flex-row justify-between">
+            <div className=" mt-20 max-container mx-auto flex flex-row justify-between">
                 <div className="w-1/6 hidden lg:block">
                     <Filter />
                 </div>
