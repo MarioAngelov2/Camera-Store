@@ -1,6 +1,4 @@
-import React from "react";
 import dslr1 from "../../assets/dslr/1.png";
-import { FiShoppingCart } from "react-icons/fi";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa";
 import Filter from "./Filter";
@@ -243,33 +241,3 @@ const Catalog = () => {
 };
 
 export default Catalog;
-
-// card
-{
-    /* <div className="cursor-pointer h-[80%] 2xl:h-[25%] xl:h-[25%] lg:h-[40%] md:h-[40%] rounded-3xl flex flex-col flex-1 w-full items-center justify-center shadow-lg shadow-gray-150">
-                        <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
-                            <img src={dslr1} width={200} className="w-[270px] lg:w-[200px]"/>
-                            <div className="flex flex-col gap-1">
-                                <p className="text-xl">Nikon D810</p>
-                                <p>Stellar Low-Light Performance</p>
-                                <p>Diverse Shooting Modes</p>
-                                <p>Intuitive Touchscreen Control</p>
-                            </div>
-                            <div className="flex flex-col">
-                                <p className="mt-2 text-xl font-bold text-center">
-                                    $899
-                                </p>
-                                <div className="flex flex-row sm:flex-col gap-4 mb-4 mt-4">
-                                    <button className="flex flex-col items-center border text-sm px-4 py-1 rounded-full bg-blue text-white font-montserrat">
-                                        <AiOutlineInfoCircle size={22}/>
-                                        Details
-                                    </button>
-                                    <button className="flex flex-col items-center border text-sm px-4 py-1 rounded-full bg-blue text-white font-montserrat">
-                                        <FiShoppingCart size={22}/>
-                                        Buy
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */
-}
