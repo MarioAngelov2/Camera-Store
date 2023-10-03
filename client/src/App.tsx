@@ -10,6 +10,8 @@ import Footer from "./components/Footer/Footer";
 import Catalog from "./components/Catalog/Catalog";
 import AdminLogin from "./components/Admin/AdminLogin";
 import AdminDashboard from "./components/Admin/AdminDashboard";
+import CreateProduct from "./components/Admin/CreateProduct";
+
 
 function App() {
     const isAdminRoute = window.location.pathname.startsWith("/admin");
@@ -20,13 +22,13 @@ function App() {
             <Routes>
                 <Route path="/admin" element={<AdminLogin />} />
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/admin/dashboard/create-product" element={<CreateProduct />} />
                 <Route path="/" element={<GlobalRoute />} />
                 <Route path="/catalog" element={<Catalog />} />
             </Routes>
-
             {isAdminRoute ? null : (
                 <section className="padding bg-black">
-                    <Footer />{" "}
+                    <Footer />
                 </section>
             )}
         </main>
