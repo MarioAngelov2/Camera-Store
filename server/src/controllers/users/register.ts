@@ -7,6 +7,7 @@ interface CreateUserRequestBody {
     name: string;
     email: string;
     password: string;
+    role: string;
 }
 
 const createUser = async (
@@ -15,7 +16,7 @@ const createUser = async (
     next: NextFunction
 ) => {
     try {
-        const { name, email, password } = req.body;
+        const { name, email, password, role } = req.body;
 
         if (!name || !email || !password) {
             throw new createHttpError.BadRequest("Missing required fields");
@@ -33,6 +34,7 @@ const createUser = async (
             name,
             email,
             password: hashedPassword,
+            role,
         });
 
         await newUser.save();
