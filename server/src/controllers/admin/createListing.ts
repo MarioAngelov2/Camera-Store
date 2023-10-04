@@ -3,8 +3,17 @@ import { CameraModel } from "../../models/camera";
 import createHttpError from "http-errors";
 import jwt from "jsonwebtoken";
 
+interface ICreateListing {
+    name: string;
+    price: string;
+    discountPrice: string;
+    cameraType: string;
+    description: string;
+    photos: string[];
+}
+
 const createListing = async (
-    req: Request,
+    req: Request<{}, {}, ICreateListing>,
     res: Response,
     next: NextFunction
 ) => {
