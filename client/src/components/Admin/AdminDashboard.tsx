@@ -6,10 +6,18 @@ import { FiSettings } from "react-icons/fi";
 import { FiLogOut } from "react-icons/fi";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import CreateProduct from "./CreateProduct";
+import * as adminAPI from "../../api/adminAPI";
+import { useNavigate } from "react-router-dom";
+import { MouseEv } from "../../types";
 
 const AdminDashboard = ({ children }: any) => {
     const [open, setOpen] = useState<Boolean>(false);
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        await adminAPI.logoutAdmin();
+        navigate("/admin");
+    };
 
     return (
         <section className="">
@@ -85,7 +93,7 @@ const AdminDashboard = ({ children }: any) => {
                                 Settings
                             </span>
                         </Link>
-                        <Link to={""} className="link-admin-panel">
+                        <Link to={""} onClick={handleLogout} className="link-admin-panel">
                             <FiLogOut size={20} />
                             <span
                                 className={`${
