@@ -8,7 +8,6 @@ import { BsArrowLeftShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import * as adminAPI from "../../api/adminAPI";
 import { useNavigate } from "react-router-dom";
-import { MouseEv } from "../../types";
 
 const AdminDashboard = ({ children }: any) => {
     const [open, setOpen] = useState<Boolean>(false);
