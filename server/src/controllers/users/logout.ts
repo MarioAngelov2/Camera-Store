@@ -1,6 +1,6 @@
-import { Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 
-const logout = async (res: Response<string>, next: NextFunction) => {
+const logout = async (req: Request ,res: Response<string>, next: NextFunction) => {
     try {
         res.clearCookie("token", {
             httpOnly: true,
