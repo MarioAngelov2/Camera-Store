@@ -11,8 +11,8 @@ export interface ICamera extends Document {
 }
 
 const CameraSchema = new Schema<ICamera>({
-    name: { type: String, required: true },
-    price: { type: String, required: true },
+    name: { type: String },
+    price: { type: String },
     discountPrice: { type: String, default: null },
     cameraType: { type: String },
     description: { type: String },
