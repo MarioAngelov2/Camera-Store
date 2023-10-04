@@ -1,0 +1,1 @@
+const generalURL = 'http://localhost:3001'
