@@ -32,3 +32,13 @@ export async function createListing(data: any) {
         console.log(error);
     }
 }
+
+export async function logoutAdmin() {
+    try {
+        await fetch(`${adminURL}/logout`, {
+            credentials: "include",
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
