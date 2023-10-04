@@ -6,6 +6,7 @@ import deleteListing from "../controllers/admin/deleteListing";
 import getListings from "../controllers/admin/getListings";
 import auth from "../middleware/auth";
 import adminAuth from "../middleware/adminAuth";
+import logout from "../controllers/users/logout";
 
 const router = Router();
 
@@ -17,5 +18,6 @@ router.put("/admin/update-listing/:id", createListing);
 router.delete("/admin/delete-listing/:id", deleteListing);
 router.get("/admin/get-listings", getListings);
 router.post("/admin/login", loginUser);
+router.get("/admin/logout", logout)
 
 export default router;
