@@ -16,5 +16,6 @@ router.post("/admin/create-listing", createListing);
 router.put("/admin/update-listing/:id", createListing);
 router.delete("/admin/delete-listing/:id", deleteListing);
 router.get("/admin/get-listings", getListings);
+router.post("/admin/login", loginUser);
 
 export default router;
