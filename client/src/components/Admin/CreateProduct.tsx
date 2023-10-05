@@ -2,15 +2,17 @@ import { useState } from "react";
 import AdminDashboard from "./AdminDashboard";
 import * as adminAPI from "../../api/adminAPI";
 import { FormEv } from "../../types";
+import UploadPhotos from "./UploadPhotos";
+
 
 const CreateProduct = () => {
     const [openForm, setOpenForm] = useState<Boolean>(false);
     const [name, setName] = useState<string>("");
     const [price, setPrice] = useState<string>("");
-    const [discountedPrice, setDiscountedPrice] = useState<string>("");
+    const [discountPrice, setDiscountPrice] = useState<string>("");
     const [cameraType, setCameraType] = useState<string>("");
     const [description, setDescription] = useState<string>("");
-    const [photos, setPhotos] = useState<string>("");
+    const [photos, setPhotos] = useState<string[]>([]);
 
     const handleOpenForm = () => {
         setOpenForm(!openForm);
@@ -19,7 +21,7 @@ const CreateProduct = () => {
     const data = {
         name,
         price,
-        discountedPrice,
+        discountPrice,
         cameraType,
         description,
         photos,
@@ -50,7 +52,12 @@ const CreateProduct = () => {
                         <h1 className="text-2xl font-montserrat">
                             New Product
                         </h1>
-                        <form onSubmit={addListing} action="" method="POST" className="mt-4">
+                        <form
+                            onSubmit={addListing}
+                            action=""
+                            method="POST"
+                            className="mt-4"
+                        >
                             <h3 className="text-xl mb-1 font-montserrat">
                                 Camera Model
                             </h3>
@@ -59,9 +66,7 @@ const CreateProduct = () => {
                                 type="text"
                                 placeholder="Canon EOS 5D Mark IV"
                                 value={name}
-                                onChange={(ev) =>
-                                    setName(ev.target.value)
-                                }
+                                onChange={(ev) => setName(ev.target.value)}
                             />
                             <h3 className="text-xl mb-1 mt-4 font-montserrat">
                                 Price
@@ -83,9 +88,9 @@ const CreateProduct = () => {
                                 className="admin-input"
                                 type="text"
                                 placeholder="$1700"
-                                value={discountedPrice}
+                                value={discountPrice}
                                 onChange={(ev) =>
-                                    setDiscountedPrice(ev.target.value)
+                                    setDiscountPrice(ev.target.value)
                                 }
                             />
                             <h3 className="text-xl mb-1 mt-4 font-montserrat">
@@ -112,21 +117,8 @@ const CreateProduct = () => {
                                 }
                             />
                             {/* photos */}
-                            <h3 className="text-xl mb-1 mt-4 font-montserrat">
-                                Upload Photos From URL
-                            </h3>{" "}
-                            <div className="flex flex-col md:flex-row gap-2">
-                                <input
-                                    className="admin-input"
-                                    type="text"
-                                    placeholder="Place your link here..."
-                                    value={photos}
-                                    onChange={(ev) =>
-                                        setPhotos(ev.target.value)
-                                    }
-                                />
-                                <button className="admin-button">Upload</button>
-                            </div>
+                            <UploadPhotos photos={photos} setPhotos={setPhotos}/>
+                            {/* photos */}
                             <div className="flex justify-center md:justify-start">
                                 <button className="admin-button mt-4">
                                     Add product
