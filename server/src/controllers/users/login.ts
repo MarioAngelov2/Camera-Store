@@ -15,11 +15,12 @@ const loginUser = async (
     next: NextFunction
 ) => {
     try {
+        console.log(req.body)
         const { email, password } = req.body;
 
-        if (!email || !password) {
-            throw new createHttpError.BadRequest("Missing required fields");
-        }
+        // if (!email || !password) {
+        //     throw new createHttpError.BadRequest("Missing required fields");
+        // }
 
         const existingUser = await UserModel.findOne({ email: email }).exec();
 
