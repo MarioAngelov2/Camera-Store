@@ -19,15 +19,16 @@ const uploadPhotosFromDevice = async (
                 fs.renameSync(path, newPath);
                 uploadedFiles.push(
                     newPath.replace(
-                        "/Users/marioangelov/Desktop/Projects/Camera-Store/server/src/uploads/",
+                        "/Users/marioangelov/Desktop/Projects/Camera-Store/server/assets/uploads/",
                         ""
                     )
                 );
             }
         }
-
         res.json(uploadedFiles);
     } catch (error) {
         console.log(error);
     }
 };
+
+export default uploadPhotosFromDevice;
